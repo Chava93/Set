@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Set Game</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <h1>Set</h1>
+    <script type="text/javascript">
+        var payload = [{"color": "rojo" }];
+
+        $.post("https://us-central1-setgame.cloudfunctions.net/hello_http", payload, function(x) {
+          console.log("res: ", x);
+        })
+    </script>
+  </body>
+</html>
