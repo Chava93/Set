@@ -7,12 +7,7 @@
   </head>
   <body>
     <h1>Set</h1>
-    <script type="text/javascript">
-        var payload = [{"color": "rojo" }];
-
-        $.post("https://us-central1-setgame.cloudfunctions.net/hello_http", payload, function(x) {
-          console.log("res: ", x);
-        })
-    </script>
+    <button type="button" name="button" onclick="newHand()">New Hand</button>
+    <script type="text/javascript" src="./script.js"></script>
   </body>
 </html>
