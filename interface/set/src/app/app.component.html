@@ -1,0 +1,30 @@
+<div style="text-align:center">
+  <h1>
+    {{ title }}
+  </h1>
+</div>
+<button (click)="newHand()">New Hand</button>
+<div class="card-container">
+  <div class="card" *ngFor="let card of hand; let i = index">
+    <button (click)="chooseCard(card, i)" [ngClass]="{'activeCard':activeCards.includes(i)}">
+      <div class="{{card.color}} {{card.relleno}} {{card.forma}}"></div>
+      <div *ngIf="card.numero == 'dos' || card.numero == 'tres'" class="{{card.color}} {{card.relleno}} {{card.forma}}"></div>
+      <div *ngIf="card.numero == 'tres'" class="{{card.color}} {{card.relleno}} {{card.forma}}"></div>
+    </button>
+  </div>
+</div>
+
+<p>You've found {{foundSets.length}} of the {{sets.length}} sets in this hand.</p>
+<div *ngFor="let set of foundSets; let i = index">
+  <p>Set {{i+1}}</p>
+  <div *ngFor="let card of set;">
+    {{hand[card].forma}}
+    {{hand[card].numero}}
+    {{hand[card].color}}
+    {{hand[card].relleno}}
+  </div>
+</div>
+
+<div *ngIf="sets.length == foundSets.length">
+  <h2>You won!</h2>
+</div>
